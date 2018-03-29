@@ -20,7 +20,7 @@ class Search extends Component {
     submit = () => {
         console.log('Props', this.props);
         console.log('state ius ', this.state.searchParam);
-        //this.props.dispatch(searchAndListuser(this.state.searchParam));
+        this.props.dispatch(searchAndListuser(this.state.searchParam));
 
     }
     render() {

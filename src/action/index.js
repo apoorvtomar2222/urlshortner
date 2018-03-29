@@ -1,5 +1,6 @@
 const apiCall = 'https://api.github.com/users/octocat';
 export const searchAndListuser = (username) => {
+    console.log('Search and called');
     return (dispatch) => {
         dispatch({ type: 'Loader_activated' });
         return (callAPi(username)
