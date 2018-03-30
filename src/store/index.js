@@ -5,6 +5,6 @@ import { rootReducer } from '../reducers/index'
 const Middleware = applyMiddleware(...middleware);
 
 /**Global Store for saving store value */
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, Middleware);
 
 export default store;
