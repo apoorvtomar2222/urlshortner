@@ -7,7 +7,7 @@ export default class Homepage extends Component {
                 <nav className="navbar navbar-inverse">
                     <div className="container-fluid">
                         <div className="navbar-header">
-                            <a className="navbar-brand" href="#">Url Shortner</a>
+                            <a className="navbar-brand" >Url Shortener</a>
                         </div>
 
                     </div>

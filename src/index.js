@@ -5,10 +5,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Provider } from 'react-redux';
 import store from './store/index';
 import Homepage from './container/homepage/index';
-import Searchpage from './container/searchpage/index';
+import Shortener from './container/shortener/index';
 
 import './index.css';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
@@ -16,7 +15,7 @@ ReactDOM.render(
         <Router>
             <div>
                 <Route path='*' component={Homepage} />
-                <Route path='/' component={Searchpage} />
+                <Route path='/' component={Shortener} />
             </div>
 
         </Router>

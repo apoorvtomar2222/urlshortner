@@ -2,7 +2,6 @@ const initialState = {
     search: ''
 }
 export const homeReducer = (state = initialState, action) => {
-    console.log('Called', action.data);
     switch (action.type) {
 
         case 'FETCH_SUCCESS': {

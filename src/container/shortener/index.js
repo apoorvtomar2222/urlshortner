@@ -7,7 +7,7 @@ class Search extends Component {
     constructor(Props) {
         super(Props);
         this.state = {
-            searchParam: ''
+            searchUrl: ''
         }
 
     }
@@ -16,16 +16,15 @@ class Search extends Component {
     }
     onTodoChange(value) {
         this.setState({
-            searchParam: value
+            searchUrl: value
         });
     }
 
     submit = () => {
-        console.log('Props', this.props);
-        console.log('state ius ', this.state.searchParam);
-
-        this.props.dispatch(searchAndListuser(this.state.searchParam))
-            .then()
+        this.props.dispatch(searchAndListuser(this.state.searchUrl))
+            .then(
+                this.setState({ searchUrl: '' })
+            )
             .catch((error) => {
                 console.log("error", error);
 
@@ -49,18 +48,20 @@ class Search extends Component {
         )
     }
     render() {
-        console.log('This props is', this.props.homeReducer);
         return (
 
             <div className="container">
                 <div className="jumbotron">
-                    <h1>Url Shortner</h1>
+                    <h1>Url Shortener</h1>
 
                 </div>
 
                 <label >Enter Url</label>
-                <input type="text" className="form-control" id="usr" value={this.state.searchParam} onChange={e => this.onTodoChange(e.target.value)} />
-                <input type='button' onClick={this.submit} value='Search User' />
+                <input type="text" className="form-control" id="usr" value={this.state.searchUrl} onChange={e => this.onTodoChange(e.target.value)} />
+                <br />
+
+                <input type='button' className='btn btn-success' onClick={this.submit} value='Trim Url' />
+                <br />
                 <table className="table table-striped">
                     <thead  >
                         <tr>
